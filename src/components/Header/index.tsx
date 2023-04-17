@@ -7,9 +7,9 @@ import styles from "./style";
 
 function Header() {
   return (
-    <View>
-      <Text>Nome do Evento</Text>
-      <Text>Data do Evento</Text>
+    <View style={ styles.header }>
+      <Text style={ styles.name }>Nome do Evento</Text>
+      <Text style={ styles.date }>Data do Evento</Text>
     </View>
   );
 }
