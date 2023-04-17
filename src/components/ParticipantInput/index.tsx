@@ -9,10 +9,10 @@ import styles from "./style";
 
 function ParticipantInput() {
   return (
-    <View>
-      <TextInput placeholder="Novo paticipante"></TextInput>
-      <TouchableOpacity>
-        <Image source={ require("../../assets/icons/plus.svg") }></Image>
+    <View style={ styles.container }>
+      <TextInput style={ styles.input } placeholder="Novo paticipante" placeholderTextColor="#6b6b6b"></TextInput>
+      <TouchableOpacity style={ styles.button }>
+        <Image style={ styles.btImage } source={ require("../../assets/icons/plus.png") }></Image>
       </TouchableOpacity>
     </View>
   );
