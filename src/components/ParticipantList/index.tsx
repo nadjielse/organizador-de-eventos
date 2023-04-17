@@ -26,12 +26,18 @@ const PARTICIPANTS = [
 
 function ParticipantList() {
   return (
-    <View>
-      <Text>Participantes</Text>
+    <View style={ styles.container }>
+      <Text style={ styles.title }>Participantes</Text>
       <FlatList
         data={ PARTICIPANTS }
         renderItem={ data => <Participant name={ data.item.name }></Participant> }
         keyExtractor={ data => data.id }
+        ListEmptyComponent={ (
+          <View style={ styles.txView }>
+            <Text style={ styles.text }>Ninguém chegou no evento ainda?</Text>
+            <Text style={ styles.text }>Adicione participantes a sua lista de presença.</Text>
+          </View>
+        ) }
       ></FlatList>
     </View>
   );
