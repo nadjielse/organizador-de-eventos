@@ -13,10 +13,10 @@ interface ParticipantProps {
 
 function Participant({ name }: ParticipantProps) {
   return (
-    <View>
-      <Text>{ name }</Text>
-      <TouchableOpacity>
-        <Image source={ require("../../assets/icons/minus.svg") }></Image>
+    <View style={ styles.container }>
+      <Text style={ styles.name }>{ name }</Text>
+      <TouchableOpacity style={ styles.button }>
+        <Image style={ styles.btImage } source={ require("../../assets/icons/minus.png") }></Image>
       </TouchableOpacity>
     </View>
   )
