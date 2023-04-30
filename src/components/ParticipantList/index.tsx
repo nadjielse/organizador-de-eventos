@@ -8,29 +8,18 @@ import Participant from "../Participant";
 
 import styles from "./style";
 
-// Placeholder participants data
-const PARTICIPANTS = [
-  {
-    id: '1',
-    name: "Daniel"
-  },
-  {
-    id: '2',
-    name: "David"
-  },
-  {
-    id: '3',
-    name: "Fábio"
-  }
-];
+interface Props {
+  onRemoveParticipant: Function,
+  participants: Array<{ id: string, name: string }>
+}
 
-function ParticipantList() {
+function ParticipantList(props: Props) {
   return (
     <View style={ styles.container }>
       <Text style={ styles.title }>Participantes</Text>
       <FlatList
-        data={ PARTICIPANTS }
-        renderItem={ data => <Participant name={ data.item.name }></Participant> }
+        data={ props.participants }
+        renderItem={ data => <Participant onRemoveParticipant={ () => props.onRemoveParticipant(data.item.id) } name={ data.item.name }></Participant> }
         keyExtractor={ data => data.id }
         ListEmptyComponent={ (
           <View style={ styles.txView }>
